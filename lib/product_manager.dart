@@ -19,7 +19,7 @@ class _ProductManagerState extends State<ProductManager>{
               child: RaisedButton(
                 onPressed: (){
                   setState(() {
-                    _products.add("value");
+                    _products.add("value" + _products.length.toString());
                   });
                   
                 },
@@ -27,7 +27,15 @@ class _ProductManagerState extends State<ProductManager>{
               ),
             
             ),
-            Product(_products)
+            Expanded(child:  ListView.builder(
+                padding: EdgeInsets.all(8.0),
+                itemCount: _products.length,
+                itemBuilder: (BuildContext context, int index){
+                  return Product(_products[index]);
+                }
+              )),
+          
+            
             ]);
   }
 }

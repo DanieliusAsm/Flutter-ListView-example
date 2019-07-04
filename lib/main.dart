@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp>{
           title: Text("Appsas"),
         ),
         body: 
-            ProductManager() 
+            ProductManager()
       )
     );
   }
